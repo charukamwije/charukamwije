@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charuka Mwije · Computational Design Portfolio</title>
+  <meta name="description" content="Parametric and generative architecture in Rhino and Grasshopper.">
+  <style>
+    :root {
+      --bg: #f4f4f1; --fg: #141414; --muted: #6b6b66;
+      --rule: #d5d5cf; --accent: #0a7a6e; --panel: #e9e9e4;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f1110; --fg: #e8e8e3; --muted: #8f918b;
+        --rule: #2a2d2b; --accent: #5fd3c3; --panel: #171a18;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    header.top { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--rule); }
+    .bar { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+    .brand { font: 14px var(--mono); }
+    nav.links { display: flex; gap: 20px; font: 13px var(--mono); }
+
+    .hero { padding: 96px 24px 64px; }
+    .eyebrow { font: 13px var(--mono); color: var(--accent); margin: 0 0 16px; }
+    h1 { font-size: clamp(40px, 7vw, 76px); line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 24px; font-weight: 600; }
+    .lede { max-width: 640px; font-size: 19px; color: var(--muted); margin: 0 0 48px; }
+
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 0; border-top: 1px solid var(--rule); }
+    .stats div { padding: 16px 16px 16px 0; border-bottom: 1px solid var(--rule); }
+    .stats dt { font: 12px var(--mono); color: var(--muted); }
+    .stats dd { margin: 4px 0 0; font: 14px var(--mono); }
+
+    section.block { padding: 72px 24px; border-top: 1px solid var(--rule); }
+    h2 { font-size: 22px; font-weight: 600; margin: 0 0 40px; display: flex; gap: 14px; align-items: baseline; }
+    .idx { font: 13px var(--mono); color: var(--accent); font-weight: 400; }
+
+    .project { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; margin-bottom: 56px; }
+    .figure {
+      aspect-ratio: 16 / 9; background: var(--panel); border: 1px solid var(--rule);
+      background-image: linear-gradient(var(--rule) 1px, transparent 1px), linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+      background-size: 24px 24px; display: flex; align-items: center; justify-content: center;
+      font: 13px var(--mono); color: var(--muted);
+    }
+    .figure img { width: 100%; height: 100%; object-fit: cover; }
+    .tag { font: 12px var(--mono); color: var(--muted); margin: 0 0 8px; }
+    .meta h3 { font-size: 24px; margin: 0 0 10px; font-weight: 600; }
+    .meta p { margin: 0 0 16px; color: var(--muted); }
+    .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+    .chips li { font: 12px var(--mono); border: 1px solid var(--rule); padding: 2px 8px; }
+
+    .steps { list-style: none; padding: 0; margin: 0; }
+    .steps li { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--rule); color: var(--muted); }
+    .steps span { font: 15px var(--mono); color: var(--fg); }
+
+    .about p, .contact p { max-width: 620px; color: var(--muted); margin: 0 0 12px; }
+    .contact a { color: var(--accent); }
+
+    footer { display: flex; justify-content: space-between; padding: 32px 24px 48px; font: 12px var(--mono); color: var(--muted); border-top: 1px solid var(--rule); }
+
+    @media (max-width: 720px) {
+      .project { grid-template-columns: 1fr; }
+      .steps li { grid-template-columns: 1fr; gap: 6px; }
+      nav.links { gap: 12px; }
+      .hero { padding-top: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="#top">Charuka Mwije</a>
+      <nav class="links">
+        <a href="#projects">projects</a>
+        <a href="#method">method</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow">computational design / parametric + generative architecture</p>
+      <h1>Rules in, form out.</h1>
+      <p class="lede">
+        I design buildings and facades as systems of parameters, constraints and logic.
+        The work lives in Rhino and Grasshopper, where geometry is a function of inputs
+        that can be tuned, tested and rebuilt.
+      </p>
+      <dl class="stats">
+        <div><dt>primary tools</dt><dd>Rhino 8 / Grasshopper</dd></div>
+        <div><dt>plugins</dt><dd>Ladybug, Honeybee, Kangaroo, Karamba</dd></div>
+        <div><dt>scripting</dt><dd>GhPython, C#</dd></div>
+        <div><dt>fabrication</dt><dd>CNC, 3D print, laser cut</dd></div>
+      </dl>
+    </section>
+
+    <section id="projects" class="block wrap">
+      <h2><span class="idx">01</span> Projects</h2>
+
+      <article class="project">
+        <div class="figure"><span>[ render 16:9 ]</span></div>
+        <div class="meta">
+          <p class="tag">facade / 2025 / pavilion scale</p>
+          <h3>Voronoi Facade Lattice</h3>
+          <p>A panelised skin whose cell density responds to solar exposure from a Ladybug analysis.</p>
+          <ul class="chips"><li>Grasshopper</li><li>Ladybug</li><li>Kangaroo</li><li>CNC</li></ul>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="figure"><span>[ render 16:9 ]</span></div>
+        <div class="meta">
+          <p class="tag">structure / 2024 / academic studio</p>
+          <h3>Form-Found Timber Shell</h3>
+          <p>A funicular shell generated from a hanging-chain model, checked in Karamba.</p>
+          <ul class="chips"><li>Karamba</li><li>Kangaroo</li><li>GhPython</li></ul>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="figure"><span>[ render 16:9 ]</span></div>
+        <div class="meta">
+          <p class="tag">urbanism / 2024 / research</p>
+          <h3>Urban Massing Field</h3>
+          <p>A generative massing study trading daylight, density and views in a multi-objective search.</p>
+          <ul class="chips"><li>Galapagos</li><li>Honeybee</li><li>Python</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="method" class="block wrap">
+      <h2><span class="idx">02</span> Method</h2>
+      <ol class="steps" style="list-style:none;padding:0;margin:0">
+        <li><span>parameterise</span>Expose the open design decisions as sliders, domains and toggles.</li>
+        <li><span>constrain</span>Encode performance, fabrication and site limits as rules the geometry must meet.</li>
+        <li><span>generate</span>Run the definition across the parameter space and keep the outputs that pass.</li>
+        <li><span>select</span>Filter results with multi-objective search, then review them by eye.</li>
+        <li><span>build</span>Export fabrication-ready geometry with panel IDs, tolerances and nesting.</li>
+      </ol>
+    </section>
+
+    <section id="about" class="block wrap about">
+      <h2><span class="idx">03</span> About</h2>
+      <p>Replace with a short bio: education, practice or research background, and what you are looking for next.</p>
+    </section>
+
+    <section id="contact" class="block wrap contact">
+      <h2><span class="idx">04</span> Contact</h2>
+      <p><a href="mailto:charukamwijethunga@gmail.com">charukamwijethunga@gmail.com</a></p>
+      <p><a href="https://github.com/charukamwije">github.com/charukamwije</a></p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>&copy; 2026 Charuka Mwije</span>
+    <span>plain html + css</span>
+  </footer>
+</body>
+</html>
