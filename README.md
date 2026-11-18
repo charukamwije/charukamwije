@@ -5,7 +5,7 @@ Based in Sri Lanka.
 
 ---
 
-### 🌱 Featured project: [Aswedduma](https://sl-grow.vercel.app) · [code](https://github.com/charukamwije/sl-grow)
+### 🌱 Featured project: [Aswedduma](https://aswedduma.vercel.app) · [code](https://github.com/charukamwije/sl-grow)
 
 A production-style web app that helps Sri Lankan households grow vegetables at home.
 
